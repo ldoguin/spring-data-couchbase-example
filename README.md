@@ -21,3 +21,7 @@ Add a TwitterUpdate object as first ODM example, use CouchbaseTemplate instead o
 ## Step 3 CRUD Repository
 
 Add the repository, showcase the bulk methods, add the appropriate twitterupdate/all view in Couchbase
+
+## Step 4 Creating a service
+
+Add a service to manage twitter update, test it and introduce custom query and stale option
