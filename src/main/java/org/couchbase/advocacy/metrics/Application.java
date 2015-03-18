@@ -77,7 +77,6 @@ public class Application extends AbstractCouchbaseConfiguration {
 
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx = SpringApplication.run(Application.class, args);
-        ctx.close();
     }
 
     @Bean

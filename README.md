@@ -27,3 +27,9 @@ Add the repository, showcase the bulk methods, add the appropriate twitterupdate
 Add a service to manage twitter update, test it and introduce custom query and stale option
 
 ## Step 5 Query for time series
+
+play with Repository
+
+## Step 6 Expose the repository
+
+Expose the repository with the rest annotation
