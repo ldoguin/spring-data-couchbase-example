@@ -25,3 +25,5 @@ Add the repository, showcase the bulk methods, add the appropriate twitterupdate
 ## Step 4 Creating a service
 
 Add a service to manage twitter update, test it and introduce custom query and stale option
+
+## Step 5 Query for time series

@@ -22,6 +22,7 @@ import org.springframework.social.twitter.api.Twitter;
 import org.springframework.social.twitter.api.impl.TwitterTemplate;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 @Configuration
@@ -84,23 +85,35 @@ public class Application extends AbstractCouchbaseConfiguration {
         return args -> {
             repo.deleteAll();
 
-            TwitterUpdate tu = new TwitterUpdate("key", 0, "ldoguin", 1, 1, 1, 1);
+            TwitterUpdate tu = new TwitterUpdate("key", 1, "ldoguin", 1, 1, 1, 1);
             repo.save(tu);
             TwitterUpdate tuFromCouchbase = repo.findOne(tu.getKey());
 
-            TwitterUpdate tu2 = new TwitterUpdate("key2", 0, "ldoguin", 1, 1, 1, 1);
-            TwitterUpdate tu3 = new TwitterUpdate("key3", 0, "ldoguin", 1, 1, 1, 1);
+            TwitterUpdate tu2 = new TwitterUpdate("key2", 2, "ldoguin", 1, 1, 1, 1);
+            TwitterUpdate tu3 = new TwitterUpdate("key3", 3, "ldoguin", 1, 1, 1, 1);
             List<TwitterUpdate> updateList = Arrays.asList(tu2, tu3);
             repo.save(updateList);
 
-            service.update("ldoguin");
+            for (int i = 0; i < 1000; i++) {
+                //service.update("ldoguin");
+                repo.save(new TwitterUpdate("key"+i, i, "ldoguin", i, i, i, i));
+            }
+
 
             Query query = new Query();
             query.setIncludeDocs(true);
             query.setStale(Stale.FALSE);
-            ViewResponse vr = couchbaseTemplate().queryView("twitterupdate", "all", query);
-            vr.iterator().forEachRemaining((update) -> log.info(update.getDocument()));
+            query.setRange("998","999");
+            Collection<TwitterUpdate> updates = repo.findByDate(query);
+            updates.forEach((update) ->log.info(update.getFollowers()));
 
+            query = new Query();
+            query.setStale(Stale.FALSE);
+            query.setRange("998", "999");
+            query.setReduce(true);
+
+            ViewResponse vr = couchbaseTemplate().queryView("twitterUpdate", "followersByDate", query);
+            String value = vr.iterator().next().getValue();
         };
     }
 
