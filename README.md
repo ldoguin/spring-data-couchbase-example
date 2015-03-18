@@ -12,4 +12,6 @@ start with Spring Boot, Spring Data Couchbase and Spring Social Twitter.
 
 Configuration ready + CommandLine Runner to test Bean Injection, and the couchbase configuration
 
+At this point everything is explained in [http://blog.couchbase.com/intro-spring-data-couchbase}(http://blog.couchbase.com/intro-spring-data-couchbase)
+
 
