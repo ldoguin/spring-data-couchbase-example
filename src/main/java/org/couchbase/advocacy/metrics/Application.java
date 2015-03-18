@@ -1,8 +1,11 @@
 package org.couchbase.advocacy.metrics;
 
 import com.couchbase.client.CouchbaseClient;
+import net.spy.memcached.PersistTo;
+import net.spy.memcached.ReplicateTo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.couchbase.advocacy.metrics.twitter.TwitterUpdate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -45,7 +48,6 @@ public class Application extends AbstractCouchbaseConfiguration {
         return password;
     }
 
-
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx = SpringApplication.run(Application.class, args);
         ctx.close();
@@ -54,11 +56,13 @@ public class Application extends AbstractCouchbaseConfiguration {
     @Bean
     CommandLineRunner commandLineRunner(CouchbaseClient couchbaseClient) {
         return args -> {
-            couchbaseClient.add("aKey","{'json':'object'}");
-            Object aKey = couchbaseClient().get("aKey");
-            log.info(aKey);
+            TwitterUpdate tu = new TwitterUpdate("key", 0, "ldoguin", 1, 1, 1, 1);
+            couchbaseTemplate().save(tu);
+            TwitterUpdate tuFromCouchbase = couchbaseTemplate().findById("key", TwitterUpdate.class);
+            log.info(tuFromCouchbase);
         };
     }
+
 }
 
 

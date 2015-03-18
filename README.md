@@ -14,4 +14,6 @@ Configuration ready + CommandLine Runner to test Bean Injection, and the couchba
 
 At this point everything is explained in [http://blog.couchbase.com/intro-spring-data-couchbase}(http://blog.couchbase.com/intro-spring-data-couchbase)
 
+## Step 2 Domain Object
 
+Add a TwitterUpdate object as first ODM example, use CouchbaseTemplate instead of COuchbase Client
