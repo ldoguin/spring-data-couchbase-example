@@ -37,12 +37,11 @@
     <orderEntry type="library" name="Maven: org.springframework.social:spring-social-web:1.1.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.social:spring-social-facebook:1.1.1.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.social:spring-social-github:1.0.0.M4" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.4.4" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.4.4" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.4.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.social:spring-social-twitter:1.1.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.4.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:3.2.5.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.4.4" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.4.4" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-couchbase:1.2.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:4.1.4.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:4.1.4.RELEASE" level="project" />
