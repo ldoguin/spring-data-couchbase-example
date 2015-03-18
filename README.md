@@ -17,3 +17,7 @@ At this point everything is explained in [http://blog.couchbase.com/intro-spring
 ## Step 2 Domain Object
 
 Add a TwitterUpdate object as first ODM example, use CouchbaseTemplate instead of COuchbase Client
+
+## Step 3 CRUD Repository
+
+Add the repository, showcase the bulk methods, add the appropriate twitterupdate/all view in Couchbase
